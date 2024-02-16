@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="./styles.css"/>
     <title>Eatly</title>
 </head>
 <body>
-    <header> 
+    <header class="header"> 
         <div class="container">
-            <nav>
+            <nav class="header__nav">
                 <img src="./images/Header Logo.svg" alt="">
                 <ul class="header__list">
-                    <li class="header__link"> Menu </li>
-                    <li class="header__link"> Blog </li>
-                    <li class="header__link"> Pricing </li>
-                    <li class="header__link"> Contact</li>
+                    <a href="#"> 
+                        <li class="header__link"> Menu </li> 
+                    </a>
+                    <a href="#"> 
+                        <li class="header__link"> Blog </li> 
+                    </a>
+                    <a href="#"> 
+                        <li class="header__link"> Pricing </li> 
+                    </a>
+                    <a href="#"> 
+                        <li class="header__link"> Contact </li> 
+                    </a>
                 </ul>
-                <button> Log In </button>
-                <button> Sign Up </button>
+                <button class="header__login"> Log In </button>
+                <button class="header__signup"> Sign Up </button>
             </nav>
             <button class="menu__btn">
                 <span class="bar"> </span>
@@ -27,7 +35,28 @@
             </button>
         </div>
     </header>
-    <main></main>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__wrapper">
+                    <div class="hero__head"> </div>
+                    <div class="hero__image"></div>
+                    <p class="hero__preview"> </p>
+                    <h1 class="hero__title"> Enjoy Foods All Over The <span> World </span></h1>
+                    <p class="hero__text">
+                        Eatly helps you set saving goals, 
+                        earn cash back offers, 
+                        Go to disclaimer for more details and get paychecks up to two days early. 
+                        Get a <span> $20 bonus. </span>
+                    </p>
+                    <div class="hero__btn">
+                        <a href="" class="hero__btn__start"> Get Started </a>
+                        <a href="" class="hero__btn__pro"> Go Pro </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer></footer>
 </body>
 <script src="index.js"></script>

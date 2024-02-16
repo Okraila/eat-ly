@@ -41,6 +41,13 @@ body {
     --primary-text:14px;
     --primary-color:#5C4EAE;
     --section-padding:120px;
+    --secondary-color:gray;
+    --accent-color: #201f1f;
+    --hero-title:40px;
+    --section-title:30px;
+    --text:12px;
+    --button-text:14px;
+    --section-padding:60px 0 75px 0;
 }
 
 @media screen and (min-width:1140) {
@@ -51,8 +58,146 @@ body {
 }
 
 .container {
-    max-width:140px;
+    max-width:1440px;
     width:100%;
     margin: 0 auto;
     padding:0 10px;
+}
+
+/* header */
+
+.header {
+    padding: var(--section-padding);
+}
+
+.header__nav{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__list {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 20px;
+  right: 0;
+  top: -100vh;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.header__list.active {
+    top:0;
+}
+
+.header__signup{
+  background-color: var(--primary-color);
+  width: 85px;
+  height: 45px;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 700;
+  color: white;
+  border: none;
+}
+
+.header__login{
+  border: none;
+  background-color: white;
+  font-weight: 700;
+  color: #606060;
+}
+
+.menu__btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.menu__btn .bar {
+  width: 30px;
+  height: 4px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  transition: 0.3s;
+}
+
+.menu__btn .bar:nth-child(2) {
+  top: calc(50% - 9px);
+}
+
+.menu__btn .bar:nth-child(3) {
+  top: calc(50% + 9px);
+}
+
+.menu__btn.active .bar:nth-child(1) {
+  display: none;
+}
+
+.menu__btn.active .bar:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menu__btn.active .bar:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+.header__link{
+  color: #606060;
+}
+
+
+@media screen and (min-width:992px) {
+  .header__list{
+    flex-direction: row;
+    top: 0;
+    position: static;
+    align-items: center;
+  }
+  .menu__btn{
+    display: none;
+  }
+
+  .header__link:nth-child(5){
+    padding-left: 100px;
+    }
+}
+
+/* Hero */
+
+.hero{
+    padding: var(--section-padding);
+}
+
+.hero__preview{
+    display:inline-block;
+    font-size:9px;
+    font-weight:600px;
+    position:relative;
+}
+
+.hero__title {
+    font-size:var(--hero-title);
+    font-weight:600px;
+    text-align:center;
+    position:relative;
+}
+
+.hero__preview::after {
+    content:"-- OVER 1000 USERS";
+    position:absolute;
+    top:-20px;
+    
 }
