@@ -184,6 +184,11 @@ body {
   padding: var(--section-padding);
 }
 
+.hero__head {
+  position: relative;
+  margin-bottom: 50px;
+}
+
 .hero__preview {
   display: inline-block;
   font-size: 9px;
@@ -196,19 +201,20 @@ body {
   font-weight: 600px;
   text-align: center;
   position: relative;
+  margin-bottom: 30px;
+}
+.hero__title span {
+  color: var(--primary-color);
 }
 
 .hero__preview::after {
-  content: "--OVER 1000 USERS";
+  content: "-- OVER 1000 USERS";
   position: absolute;
   top: -20px;
+  width: 140px;
   color: var(--accent-color);
-  width: 120px;
-  font-weight: 600;
-  font-size: 9px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: var(--main-font);
 }
 
 .hero__text{
