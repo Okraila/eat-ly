@@ -54,10 +54,26 @@ body {
   --secondary-font: "Inter", sans-serif;
 }
 
-@media screen and (min-width: 1140) {
+@media screen and (min-width: 520px) {
+  :root {
+    --hero-title: 50px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  :root {
+    --hero-title: 55px;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  :root {
+  }
+}
+@media screen and (min-width: 1440px) {
   :root {
     --primary-text: 16px;
-    --section-padding: 125px 0;
+    --section-padding: 70px 0;
   }
 }
 
@@ -68,7 +84,7 @@ body {
   padding: 0 10px;
 }
 
-/* header */
+/* Header */
 
 .header {
   padding: var(--section-padding);
@@ -189,19 +205,12 @@ body {
   margin-bottom: 50px;
 }
 
-.hero__preview {
-  display: inline-block;
-  font-size: 9px;
-  font-weight: 600px;
-  position: relative;
-}
-
 .hero__title {
-  font-size: var(--hero-title);
+  font-size: 40px;
   font-weight: 600px;
   text-align: center;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .hero__title span {
   color: var(--primary-color);
@@ -215,6 +224,9 @@ body {
   color: var(--accent-color);
   left: 50%;
   transform: translateX(-50%);
+  font-family: var(--main-font);
+  font-weight:600;
+  font-size:9px;
 }
 
 .hero__text{
@@ -224,6 +236,9 @@ body {
   color: var(--secondary-color);
   font-size:var(--text);
   font-weight:500;
+  max-width:355px;
+  width:100%;
+  margin:0 auto 40px;
 }
 
 .hero__text span {
@@ -258,9 +273,10 @@ body {
 
 .hero__stars{
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 10px;
+  margin-top:50px;
 }
 
 .hero__image{
@@ -269,16 +285,16 @@ body {
 }
 
 .hero__trust {
-  display:flex;
-  justify-content:center;
-  align-items: flex-end;
-  gap:10px;
+  display: flex;
+  justify-content: start;
 }
 
 .food__img{
   object-fit: contain;
   max-width:680px;
   width:100%;
+  display:flex;
+  justify-content:center;
 }
 
 @media screen and (min-width: 991px) {
@@ -299,5 +315,25 @@ body {
     display: flex;
     justify-content: start;
   }
+  
+}
+
+/* Customers */
+
+.customers {
+  padding:80px 0;
+  background-color:var(--primary-color);
+}
+
+.customers__list{
+  color:var(--white-color);
+  text-align: center;
+}
+
+.customers__item {
+
+}
+
+.customers__text {
   
 }
