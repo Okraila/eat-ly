@@ -52,6 +52,7 @@ body {
   --section-padding: 60px 0 75px 0;
   --main-font: "Poppins", sans-serif;
   --secondary-font: "Inter", sans-serif;
+  --light-color:white;
 }
 
 @media screen and (min-width: 520px) {
@@ -109,8 +110,50 @@ body {
   font-size: 20px;
 }
 
-.header__list.active {
-  top: 0;
+.header__list.active a{
+  max-width:80%;
+  padding:8px;
+  animation-name: iteman, itemop;
+  animation-duration:2.5s;
+}
+
+@keyframes iteman {
+  0% {
+    margin-left: 100%;
+  }
+  30% {
+    margin-left: 70%;
+  }
+  100% {
+    margin-left:0%;
+  }
+}
+
+@keyframes itemop {
+  0% {
+    opacity:0;
+    font-size: 0;
+    border-bottom:none;
+  }
+  70% {
+    opacity:0.1;
+    font-size: 0;
+    border-bottom:none;
+  }
+  80% {
+    opacity:0.4;
+    max-width:1%;
+    width:0;
+  }
+
+  90% {
+    opacity:0.7;
+  }
+
+  100% {
+    opacity:1;
+    max-width:80%;
+  }
 }
 
 .header__signup {
@@ -315,25 +358,64 @@ body {
     display: flex;
     justify-content: start;
   }
+  .hero__trust{
+    display: flex;
+    justify-content: start;
+  }
+  .hero__preview::after {
+    color: #201F1F33;
+    font-size: 10px;
+    left: 14%;
+  }
+  .header__buttons{
+    display: flex;
+    gap: 10px;
+  }
+  .hero__head{
+    margin: 0;
+  }
+  .header__nav{
+    border-bottom: 1px solid #CBCBCB;
+  }
   
 }
 
 /* Customers */
 
-.customers {
+.customers{
   padding:80px 0;
-  background-color:var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 .customers__list{
-  color:var(--white-color);
+  color: var(--light-color);
   text-align: center;
 }
 
-.customers__item {
+.customers__item{
+  border-bottom: 1px solid var(--secondary-color);
+  padding-bottom:60px ;
+  margin-bottom: 60px;
+} 
 
+.customers__text{
+  font-size: 40px;
+  font-weight: 700;
+  padding-bottom: 10px;
 }
 
-.customers__text {
-  
+.customers__description{
+  color: #C5BFED;
+  font-size: var(--primary-text);
+  max-width: 270px;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
 }
+
+.customers__item:nth-child(3){
+  border-bottom: none;
+  padding-bottom:0;
+  margin-bottom: 0;
+} 
+
