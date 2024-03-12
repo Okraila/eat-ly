@@ -455,6 +455,9 @@ body {
 .customers__list{
   color: var(--light-color);
   text-align: center;
+}
+
+.customers__animation{
   animation-name:customers;
   animation-duration:1.5s;
   animation-delay:0.5s;
