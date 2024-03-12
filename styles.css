@@ -422,16 +422,60 @@ body {
 .customers{
   padding:80px 0;
   background-color: var(--primary-color);
+  overflow:hidden;
+  position:relative;
+}
+
+.customers::before{
+  content:"";
+  position:absolute;
+  background-image:url(images/Customers.png);
+  top:-30px;
+  left:-287px;
+  width:550px;
+  height:500px;
+  background-size:contain;
+  background-repeat:no-repeat;
+  transform:rotate(100deg);
+}
+
+.customers::after{
+  content:"";
+  position:absolute;
+  background-image:url(images/Customers2.png);
+  bottom:-85px;
+  right:-167px;
+  width:330px;
+  height:345px;
+  background-size:contain;
+  background-repeat:no-repeat;
+  transform:rotate(25deg);
 }
 
 .customers__list{
   color: var(--light-color);
   text-align: center;
+  animation-name:customers;
+  animation-duration:1.5s;
+  animation-delay:0.5s;
+}
+
+@keyframes customers {
+  0% {
+    opacity:0;
+    transform:translateY(100vh);
+  }
+  50% {
+    opacity:0.5;
+  }
+  100% {
+    opacity:1;
+    transform:translateY(0vh);
+  }
 }
 
 .customers__item{
-  border-bottom: 1px solid var(--secondary-color);
-  padding-bottom:60px ;
+  padding-bottom:60px;
   margin-bottom: 60px;
 } 
 
