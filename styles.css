@@ -595,6 +595,21 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.quality__text span{
+  padding: 0 10px;
+}
+
+.quality__inner .quality__animation .quality__wrapper {
+  animation-name: qualityAnimWrapper;
+  animation-duration: 1.5s;
+}
+
+.quality__inner .quality__animation .quality__text {
+  animation-name: qualityAnim;
+  animation-duration: 1.5s;
+}
+
 .quality__btn::after {
   content: "";
   position: absolute;
