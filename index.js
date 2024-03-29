@@ -19,7 +19,7 @@ const isElementInViewport = (el)=> {
 
 
 const customersScroll = ()=> {
-  const section = document.querySelector(".customers__list")
+  const section = document.querySelector(".customers__inner")
   if (isElementInViewport(section)) {
     section.classList.add("customers__animation")
     window.removeEventListener("scroll",customersScroll)
