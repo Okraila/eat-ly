@@ -27,6 +27,7 @@ const customersScroll = () => {
 };
 
 window.addEventListener("scroll", customersScroll);
+customersScroll()
 
 const qualityScroll = () => {
   const section = document.querySelector(".quality__inner");
@@ -37,4 +38,4 @@ const qualityScroll = () => {
 };
 
 window.addEventListener("scroll", qualityScroll);
-
+qualityScroll()
