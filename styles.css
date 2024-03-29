@@ -545,6 +545,8 @@ body {
 .quality__text {
   padding-bottom: 110px;
   font-family: var(--secondary-font);
+  animation:qualityAnim;
+  animation-duration:1.5s;
 }
 
 .quality__text h2 {
@@ -611,6 +613,8 @@ body {
 }
 .quality__img__inner {
   position: relative;
+  animation:qualityAnimWrapper;
+  animation-duration:1.5s;
 }
 .quality__img__inner::before {
   content: "";
@@ -624,6 +628,7 @@ body {
   background-repeat: no-repeat;
   transform: rotate(350deg);
 }
+
 .quality__text span {
   padding: 0 10px;
 }
@@ -666,29 +671,39 @@ body {
   }
 }
 
-@keyframes quality__image__animation {
+.quality__animation{
+  animation-name: qualityAnim;
+  animation-duration: 1.5s;
+  transition: opacity 0.3s linear;
+  opacity: 1;
+}
+
+@keyframes qualityAnim {
   0% {
-    transform:translateX(-100vh);
+    opacity: 0;
+    transform: translateX(100vh);
   }
   50% {
-    opacity:0.5;
+    opacity: 0.5;
   }
-  100%{
-    transform:translateX(0vh);
-    opacity:1;
+ 
+  100% {
+    opacity: 1;
+    transform: translateX(0vh);
   }
 }
 
-@keyframes quality__text__animation {
+@keyframes qualityAnimWrapper {
   0% {
-    transform:translateX(1000vh);
+    opacity: 0;
+    transform: translateX(-100vh);
   }
   50% {
-    opacity:0.5;
+    opacity: 0.5; 
   }
-  100%{
-    transform:translateX(0vh);
-    opacity:1;
+ 
+  100% {
+    opacity: 1;
+    transform: translateX(0vh);
   }
 }
-
