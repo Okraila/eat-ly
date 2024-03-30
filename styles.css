@@ -55,6 +55,7 @@ body {
   --main-font: "Poppins", sans-serif;
   --secondary-font: "Inter", sans-serif;
   --light-color:white;
+  --customers-font:"Public Sans", sans-serif;
 }
 
 @media screen and (min-width: 520px) {
@@ -486,6 +487,7 @@ body {
   font-size: 40px;
   font-weight: 700;
   padding-bottom: 10px;
+  font-family: var(--customers-font);
 }
 
 .customers__description {
@@ -494,7 +496,8 @@ body {
   max-width: 270px;
   width: 100%;
   display: flex;
-  margin: 0 auto;
+  margin-left: 180px;
+  font-family: var(--secondary-font);
 }
 
 .customers__item:nth-child(2) {
@@ -721,4 +724,28 @@ body {
     opacity: 1;
     transform: translateX(0vh);
   }
+}
+
+/* restaurants */
+
+.restaurants{
+  padding-top:60px;
+  margin-bottom:60px;
+}
+
+.restaurants__text h2{
+  font-family: var(--main-font);
+  font-weight:600;
+  font-size:30px;
+  line-height: 36px;
+  text-align:center;
+}
+
+.restaurants__text h2 span {
+  font-family: var(--main-font);
+  font-weight:600;
+  font-size:30px;
+  line-height: 36px;
+  text-align:center;
+  color: var(--primary-color);
 }
