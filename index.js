@@ -44,48 +44,54 @@ window.addEventListener("scroll",qualityScroll)
 const restaurantsData = [
   {
     id:1,
-    imageUrl:"./images/restaurantimage1",
+    imageUrl:"./images/restaurantimage1.jpg",
     title:"The Chicken King",
     deliveryTime:24,
     rating:4.8,
-    status:"Healthy"
+    status:"Healthy",
+    button:"./images/Bookmark.png"
   },
   {
     id:2,
-    imageUrl:"./images/restaurantimage2",
+    imageUrl:"./images/restaurantimage2.jpg",
     title:"The Burger King",
     deliveryTime:24,
     rating:4.9,
-    status:"Trending"
+    status:"Trending",
+    button:"./images/Bookmark.png"
   },
   {
     id:3,
-    imageUrl:"./images/restaurantimage1",
+    imageUrl:"./images/restaurantimage1.jpg",
     title:"The Chicken King",
     deliveryTime:24,
     rating:4.8,
-    status:"Healthy"
+    status:"Healthy",
+    button:"./images/Bookmark.png"
   }
 ]
 
 const createRestaurantList = restaurantsData.map((item) => {
   console.log(item, "item"); 
-  const{id, imageUrl, title, deliveryTime, rating, status} = item;
+  const{id, imageUrl, title, deliveryTime, rating, status, button} = item;
   return `
   <li class="restaurants__item">
-  <img src=${imageUrl}" alt="">
+  <img class="restaurants__img" src=${imageUrl}" alt="">
   <h3 class="restaurants__h3">
   ${title}
   </h3>
-  <span class="restaurants__span">
+  <span class="restaurants__time">
   ${deliveryTime}
   </span>
-  <span class="restaurants__span">
+  <span class="restaurants__rating">
   ${rating}
   </span>
   <span class="restaurants__status">
   ${status}  
   </span>
+  <button class="restaurants__button"> 
+  ${button}
+  </button> 
 </li>
   `
 })

@@ -56,6 +56,8 @@ body {
   --secondary-font: "Inter", sans-serif;
   --light-color:white;
   --customers-font:"Public Sans", sans-serif;
+  --healthy-color-text:#DAA31A;
+  --healthy-color: #F7EDD0;
 }
 
 @media screen and (min-width: 520px) {
@@ -733,12 +735,27 @@ body {
   margin-bottom:60px;
 }
 
+.restaurants__item{
+  border-color:var(--healthy-color);
+  box-shadow: 4.73px 56.755px 28.377px 0 rgba(229, 229, 229, 0.7);
+  margin-bottom:30px;
+  border-radius:12px 12px 12px 12px;
+}
+
+.restaurants__list {
+  padding:25px;
+}
+
 .restaurants__text h2{
-  font-family: var(--main-font);
+  font-size: var(--title-font);
+  font-family:var(--main-font);
+  display:flex;
+  justify-content:center;
   font-weight:600;
-  font-size:30px;
-  line-height: 36px;
-  text-align:center;
+}
+
+.restaurants__img{
+  max-width:345px;
 }
 
 .restaurants__text h2 span {
@@ -748,4 +765,31 @@ body {
   line-height: 36px;
   text-align:center;
   color: var(--primary-color);
+}
+
+.restaurants__status {
+  color:var(--healthy-color-text);
+  background-color:var(--healthy-color);
+  padding:2px 6px;
+  border-radius:6px;
+}
+
+.restaurants__h3{
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.restaurants__time {
+  color:var(--secondary-color);
+  list-style-type:disc;
+  text-align:center;
+}
+
+.restaurants__rating::before{
+  content:"";
+  display:inline-block;
+  background-size:cover;
+  width:24px;
+  height:20px;
+  background-image:url(images/Stars.png);
 }
