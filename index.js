@@ -58,7 +58,7 @@ const restaurantsData = [
     deliveryTime:24,
     rating:4.9,
     status:"Trending",
-    button:"./images/Bookmark.png"
+    button:"images/Bookmark.png"
   },
   {
     id:3,
