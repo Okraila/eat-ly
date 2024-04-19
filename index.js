@@ -2,6 +2,8 @@ let menuBtn = document.querySelector(".menu__btn");
 let link = document.querySelector(".header__link");
 let list = document.querySelector(".header__list");
 let restaurantsList = document.querySelector(".restaurants__list")
+let dishesList = document.querySelector(".dishes__list");
+let purchasesList = document.querySelector(".purchases__list")
 
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("active");
@@ -44,7 +46,7 @@ window.addEventListener("scroll",qualityScroll)
 const restaurantsData = [
   {
     id:1,
-    imageUrl:"./images/restaurantimage1.jpg",
+    imageUrl:"./images/image.png",
     title:"The Chicken King",
     deliveryTime:24,
     rating:4.8,
@@ -53,16 +55,16 @@ const restaurantsData = [
   },
   {
     id:2,
-    imageUrl:"./images/restaurantimage2.jpg",
+    imageUrl:"./images/image2.png",
     title:"The Burger King",
     deliveryTime:24,
     rating:4.9,
     status:"Trending",
-    button:"images/Bookmark.png"
+    button:"./images/Bookmark.png"
   },
   {
     id:3,
-    imageUrl:"./images/restaurantimage1.jpg",
+    imageUrl:"./images/image.png",
     title:"The Chicken King",
     deliveryTime:24,
     rating:4.8,
@@ -76,7 +78,7 @@ const createRestaurantList = restaurantsData.map((item) => {
   const{id, imageUrl, title, deliveryTime, rating, status, button} = item;
   return `
   <li class="restaurants__item">
-  <img class="restaurants__img" src=${imageUrl}" alt="">
+  <img class="restaurants__img" src="${imageUrl}" alt="">
   <h3 class="restaurants__h3">
   ${title}
   </h3>
@@ -90,7 +92,7 @@ const createRestaurantList = restaurantsData.map((item) => {
   ${status}  
   </span>
   <button class="restaurants__button"> 
-  ${button}
+  <img src="${button}" alt="">
   </button> 
 </li>
   `
@@ -98,4 +100,125 @@ const createRestaurantList = restaurantsData.map((item) => {
 
 .join("");
 restaurantsList.innerHTML = createRestaurantList;
-createRestaurantList();
+
+const dishesData = [
+  {
+    id: 1,
+    imageUrl2: "./images/heart.png",
+    imageUrl: "./images/chicken.png",
+    title: "Chicken Hell",
+    deliveryTime: "24min •",
+    rating: 4.8,
+    status: "Healthy",
+    price: "$12.99",
+    saved: "",
+  },
+  {
+    id: 2,
+    imageUrl2: "./images/heart.png",
+    imageUrl: "./images/swedish.png",
+    title: "Swe Dish",
+    deliveryTime: "34min •",
+    rating: 4.9,
+    status: "Trending",
+    price: "$19.99",
+    saved: "",
+  },
+  {
+    id: 3,
+    imageUrl2: "./images/heart.png",
+    imageUrl: "./images/swedish.png",
+    title: "Swe Dish",
+    deliveryTime: "34min •",
+    rating: 4.9,
+    status: "Supreme",
+    price: "$19.99",
+    saved: "",
+  },
+  {
+    id: 4,
+    imageUrl2: "./images/heart.png",
+    imageUrl: "./images/chicken.png",
+    title: "Chicken Hell",
+    deliveryTime: "24min •",
+    rating: 4.8,
+    status: "Healthy",
+    price: "$12.99",
+    saved: "",
+  },
+];
+
+const createDishesList = dishesData
+  .map((dish) => {
+    return `
+      <li class="dishes__item">
+      <button class="dishes__heart__btn">
+      <img class="dishes__img__heart"  src="${dish.imageUrl2}" alt="image">
+      </button>
+      <img class="dishes__img"  src="${dish.imageUrl}" alt="image">
+      <div class="dishes__item__inner">
+      <span class="dishes__status ${dish.status.toLowerCase()}">${
+      dish.status
+    }</span>
+      <h3 class="dishes__title">${dish.title}</h3>
+      <div class="time__wrapper">
+      <span class="dishes__time">${dish.deliveryTime}</span>
+      <span class="dishes__rating">${dish.rating}</span>
+      </div>
+      <div class="price__wrapper">
+      <span class="dishes__price">${dish.price}</span>
+      <button class="dishes__add__btn">+</button>
+      </div>
+      </div>
+    </li>
+    `;
+  })
+
+  .join("");
+dishesList.innerHTML = createDishesList;
+
+const purchasesData = [
+  {
+    id: 1,
+    imageUrl: "./images/chicken.png",
+    title: "Chicken Hell",
+    time: "On The Way",
+    endTime: "3:09 PM",
+    saved: "",
+  },
+  {
+    id: 2,
+    imageUrl2: "./images/heart.png",
+    imageUrl: "./images/swedish.png",
+    title: "Swe Dish",
+    time: "Delivered",
+    endTime: "Yesterday",
+    saved: "",
+  },
+  {
+    id: 3,
+    imageUrl2: "./images/heart.png",
+    imageUrl: "./images/swedish.png",
+    title: "Swe Dish",
+    time: "Cancelled",
+    endTime: "Yesterday",
+    saved: "",
+  },
+];
+const createPurchasesList = purchasesData
+  .map((purchases) => {
+    return `
+      <li class="purchases__item">
+      <img class="purchases__img"  src="${purchases.imageUrl}" alt="image">
+      <div class="purchases__item__inner">
+      <h3 class="purchases__title">${purchases.title}</h3>
+      <div class="purchases__wrapper">
+      <span class="purchases__time">${purchases.time}</span>
+      </div>
+      <span class="purchases__endtime">${purchases.endTime}</span>
+      </div>
+    </li>
+    `;
+  })
+  .join("");
+  purchasesList.innerHTML = createPurchasesList

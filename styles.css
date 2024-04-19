@@ -58,6 +58,10 @@ body {
   --customers-font:"Public Sans", sans-serif;
   --healthy-color-text:#DAA31A;
   --healthy-color: #F7EDD0;
+  --healthy-color-text-2: #fb471d;
+  --healthy-color-2: #f7c5ba;
+  --healthy-color-text-3: rgba(51, 172, 100, 0.3);
+  --healthy-color-3: #309d5c;
 }
 
 @media screen and (min-width: 520px) {
@@ -735,15 +739,18 @@ body {
   margin-bottom:60px;
 }
 
-.restaurants__item{
-  border-color:var(--healthy-color);
+.restaurants__item {
+  background-color: var(--white-color);
   box-shadow: 4.73px 56.755px 28.377px 0 rgba(229, 229, 229, 0.7);
-  margin-bottom:30px;
-  border-radius:12px 12px 12px 12px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 380px;
+  margin: 30px auto;
 }
 
 .restaurants__list {
-  padding:25px;
+  padding: 25px;
 }
 
 .restaurants__text h2{
@@ -754,8 +761,9 @@ body {
   font-weight:600;
 }
 
-.restaurants__img{
-  max-width:345px;
+.restaurants__img {
+  max-width: 768px;
+  object-fit: cover;
 }
 
 .restaurants__text h2 span {
@@ -774,22 +782,236 @@ body {
   border-radius:6px;
 }
 
-.restaurants__h3{
-  margin-top:5px;
-  margin-bottom:5px;
-}
-
 .restaurants__time {
-  color:var(--secondary-color);
-  list-style-type:disc;
-  text-align:center;
+  cursor: var(--secondary-color);
+  list-style-type: disc;
+  align-items: center;
+  color: #8e97a6;
 }
 
-.restaurants__rating::before{
-  content:"";
-  display:inline-block;
-  background-size:cover;
-  width:24px;
-  height:20px;
-  background-image:url(images/Stars.png);
+.restaurants__status {
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.healthy {
+  color: var(--healthy-color-text);
+  background-color: var(--healthy-color);
+}
+
+.trending {
+  color: var(--healthy-color-text-2);
+  background: var(--healthy-color-2);
+}
+
+.supreme {
+  color: var(--healthy-color-3);
+  background: var(--healthy-color-text-3);
+}
+
+.restaurants__reting {
+  padding-left: 28px;
+  position: relative;
+  color: #8e97a6;
+}
+
+.restaurants__reting::before {
+  position: absolute;
+  content: "";
+  background-image: url(./images/Stars.png);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  top: -5px;
+  left: 0;
+}
+
+.healhty__div {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media screen and (min-width: 768px) {
+  .restaurants__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  .restaurants__saved {
+    margin-left: 70px;
+  }
+
+  .restaurants__list_2 {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .restaurants__item {
+    max-width: 500px;
+  }
+}
+
+.dishes__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
+  padding-bottom: 60px;
+}
+
+.dishes__text h2 {
+  text-align: center;
+  font-size: var(--quality-title);
+  padding-bottom: 70px;
+}
+.dishes__text h2 span {
+  color: var(--primary-color);
+}
+.dishes__item__inner {
+  padding: 5px;
+}
+
+.dishes__item {
+  background-color: var(--white-color);
+  box-shadow: 4.73px 56.755px 28.377px 0 rgba(229, 229, 229, 0.7);
+  max-width: 225px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 15px;
+}
+
+.dishes__img {
+  object-fit: contain;
+  max-width: 150px;
+  width: 100%;
+  max-height: 150px;
+  height: 100%;
+}
+
+.dishes__heart__btn {
+  border: none;
+  background-color: var(--white-color);
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.dishes__status {
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.dishes__title {
+  margin-bottom: 10px;
+}
+
+.dishes__time {
+  color: var(--secondary-color);
+}
+
+.dishes__price {
+  font-weight: 700;
+}
+.dishes__rating {
+  color: var(--secondary-color);
+  position: relative;
+  padding-left: 15px;
+}
+
+.time__wrapper {
+  padding-bottom: 15px;
+}
+
+.dishes__rating::before {
+  content: "";
+  position: absolute;
+  background-image: url(./images/Stars.png);
+  top: 0px;
+  left: 0px;
+  width: 14px;
+  height: 15px;
+}
+
+.dishes__add__btn {
+  background-color: #323142;
+  color: white;
+  border: none;
+  box-shadow: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.price__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dishes__view {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px;
+  color: #acadb9;
+  font-weight: 500;
+  font-size: 20px;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.dishes__view::before {
+  content: "";
+  position: absolute;
+  background-image: url(./images/Arrow1.png);
+  top: 2px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+}
+@media screen and (min-width: 650px) {
+  .dishes__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 768px) {
+  .dishes__list {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    justify-content: center;
+    gap: 0px;
+  }
+}
+
+.purchases__list {
+  display: grid;
+  gap: 10px;
+  padding-bottom: 60px;
+}
+
+.purchases__text h2 {
+  text-align: start;
+  font-size: var(--quality-title);
+  padding-bottom: 70px;
+}
+
+.purchases__text h2 span {
+  color: var(--primary-color);
+}
+
+.purchases__item__inner {
+  padding: 5px;
+}
+
+.purchases__item {
+  background-color: var(--white-color);
+  box-shadow: 0 13.256px 19.884px 0 rgba(70, 70, 70, 0.1);
+  max-width: 225px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 15px;
 }
