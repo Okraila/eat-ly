@@ -3,7 +3,9 @@ let link = document.querySelector(".header__link");
 let list = document.querySelector(".header__list");
 let restaurantsList = document.querySelector(".restaurants__list")
 let dishesList = document.querySelector(".dishes__list");
-let purchasesList = document.querySelector(".purchases__list")
+let purchasesList = document.querySelector(".purchases__list");
+const customersSay = document.querySelector(".customersay__list");
+const swiperWrapper = document.querySelector(".swiper-wrapper");
 
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("active");
@@ -222,3 +224,92 @@ const createPurchasesList = purchasesData
   })
   .join("");
   purchasesList.innerHTML = createPurchasesList
+
+  const customersData = [
+    {
+      id: 1,
+      imageUrl: "./images/customer.png",
+      title: "Alexander R.",
+      time: "01 Year With Us ",
+      imageUrl2: "./img/icons/Pathcustomersay.svg",
+      stroke:
+        "“ Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time ”",
+      star: "./images/star.png",
+    },
+  ];
+  
+  const createCustomersayList = customersData
+    .map((custom) => {
+      return `
+        <li class="customersay__item">
+        <div class="customersay__wrapper">
+          <img class="customersay__img"  src="${custom.imageUrl}" alt="image">
+          <div class="customersay__item__inner">
+            <h3 class="customersay__title">${custom.title}</h3>
+            <span class="customersay__p">${custom.time}</span>
+          </div>
+        </div>
+        <span class="customersay__stroke">${custom.stroke}</span>
+        <img class="customersay__star"   src="${custom.star}" alt="image">
+      </li>
+      `;
+    })
+  
+    .join("");
+  customersSay.innerHTML = createCustomersayList;
+  
+  const swiperData = [
+    {
+      id: 1,
+      stroke:
+        " Online nline invoice payment helps companies save time, are faster and save maximum effort for the clien ",
+      star: "./images/star.png",
+    },
+  
+    {
+      id: 2,
+      stroke:
+        " Online nline invoice payment helps companies save time, are faster and save maximum effort for the clien ",
+      star: "./images/star.png",
+    },
+  
+    {
+      id: 3,
+      stroke:
+        " Online nline invoice payment helps companies save time, are faster and save maximum effort for the clien ",
+      star: "./images/star.png",
+    },
+  ];
+  
+  const createSwiperList = swiperData
+    .map((swiper) => {
+      return `
+      <div class="swiper__slide">
+        <div class="swiper__item">
+          <span class="swiper__stroke">${swiper.stroke}</span>
+          <img class="swiper__star"   src="${swiper.star}" alt="image">
+        </div>
+      </div>
+      `;
+    })
+  
+    .join("");
+  swiperWrapper.innerHTML  = createSwiperList;
+
+  const newSwiper = new Swiper(".mySwiper", {
+    breakpoints: {
+      368: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1140: {
+        slidesPerView: 3,
+      },
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      hide:true,
+    }
+  });
